@@ -1,0 +1,45 @@
+{
+  "id": "bmad-architect",
+  "name": "BMad Architect",
+  "provider": "synthetic",
+  "model": "hf:MiniMaxAI/MiniMax-M2.1",
+  "maxIterations": 300,
+  "maxTokens": 16384,
+  "temperature": 0.2,
+  "minTimeBetweenToolCalls": 0,
+  "usePowerTools": true,
+  "useAiderTools": false,
+  "useTodoTools": true,
+  "useSubagents": true,
+  "useSkillsTools": true,
+  "useTaskTools": false,
+  "useMemoryTools": false,
+  "toolApprovals": {
+    "power---file_read": "always",
+    "power---file_write": "always",
+    "todo---*": "always"
+  },
+  "toolSettings": {
+    "power---bash": {
+      "deniedPattern": "rm .*;del .*;chown .*;chgrp .*;chmod .*;mv .*\\s+/;mv .*\\s/tmp;kill .*;pkill .*;killall"
+    },
+    "power---file_write": {
+      "deniedPattern": "\\.\\./.*\\.\\./"
+    }
+  },
+  "subagent": {
+    "enabled": false,
+    "invocationMode": "on-demand",
+    "color": "#7c3aed",
+    "contextMemory": "project",
+    "systemPrompt": "",
+    "description": ""
+  },
+  "customInstructions": "",
+  "description": "BMad Architect - System Architect and Technical Design Leader",
+  "includeContextFiles": false,
+  "includeRepoMap": false,
+  "autoApprove": true,
+  "enabledServers": [],
+  "mcpServers": {}
+}
